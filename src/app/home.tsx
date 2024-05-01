@@ -35,12 +35,12 @@ export default function Home() {
         destructiveButtonIndex,
       },
       (buttonIndex) => {
-        if (buttonIndex === 1) {
-          voltarLogin();
+        if (buttonIndex === 0) {
+          router.navigate("/sobre");
+        } else {
+          buttonIndex !== 0;
+            voltarLogin();
         }
-         (buttonIndex === 2) 
-          router.navigate('/sobre')
-        
       }
     );
   };
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   header: {
-    fontSize: 24, 
+    fontSize: 24,
     backgroundColor: "#131370",
     padding: 15,
     marginTop: 20,
@@ -144,14 +144,14 @@ const styles = StyleSheet.create({
     height: 50,
     width: 50,
     borderRadius: 50,
-    textAlign: 'center',
+    textAlign: "center",
     paddingTop: 10,
-    fontSize: 20
+    fontSize: 20,
   },
   modelCar: {
     flexDirection: "row",
-    gap: 10, 
+    gap: 10,
     marginBottom: 20,
-    alignItems: 'center'
-  }
+    alignItems: "center",
+  },
 });
