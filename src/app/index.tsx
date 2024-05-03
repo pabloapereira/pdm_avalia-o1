@@ -38,6 +38,12 @@ export default function index() {
     navigateToHome();
   }
 
+  const handleLogout = () => {
+    setUsername("");
+    setSenha("");
+    setLoginValido(false);
+  };
+
   return (
     <Background>
       <FormContainer>
@@ -48,7 +54,7 @@ export default function index() {
           />
           <Input onChangeText={valorUser} />
           <Input onChangeText={valorSenha} eSenha={true} />
-          <Button onPress={handleLogin} />
+          <Button onPress={loginValido ? handleLogout : handleLogin} />
         </View>
       </FormContainer>
     </Background>
