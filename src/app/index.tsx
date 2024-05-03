@@ -1,5 +1,5 @@
 import { View, Text, Image, StyleSheet } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "expo-router";
 
 import Input from "../components/inputs/Input";
@@ -34,9 +34,11 @@ export default function index() {
     router.navigate("/home");
   };
 
-  if (loginValido) {
-    navigateToHome();
-  }
+  useEffect(() => {
+    if (loginValido) {
+      navigateToHome();
+    }
+  }, [loginValido]);
 
   const handleLogout = () => {
     setUsername("");
